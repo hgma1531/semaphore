@@ -1,0 +1,20 @@
+---
+ - name: MariaDB Management using Ansible
+   hosts: all
+   gather_facts: true
+   become: true
+   vars:
+     mysql_root_password: "HSadmin00!"
+   tasks:
+     - name: Installing MariaDB Server
+       yum:
+         name :
+           - mariadb-server
+           - python3-PyMySQL
+         state: present
+
+     - name: start and enable mariadb server
+       service:
+         name: mariadb
+         enabled: true
+         state: started
