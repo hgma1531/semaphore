@@ -1,0 +1,5 @@
+postgresql_databases:
+  - name: matest
+postgresql_users:
+  - name: matest_user
+    password: matest_user00!
